@@ -1,5 +1,5 @@
 .top-bar {
-  padding: 10px;
+  padding: 0.5em;
   background-color: #444;
   display: flex;
   justify-content: center;
@@ -7,13 +7,21 @@
 .top-bar--orange {
   background-color: orange;
 }
-.top-bar img {
-  height: 30px;
+.top-bar .navChild__image {
+  height: 3em;
   width: auto;
+}
+.top-bar .img_links_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.5em;
+}
+.top-bar input {
+  width: 45em;
 }
 .top-bar__link {
   font-weight: bold;
-  margin-left: 5px;
   color: #fff;
 }
 .top-bar__link--active {

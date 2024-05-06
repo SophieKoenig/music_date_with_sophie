@@ -3,30 +3,31 @@
   background-color: $color;
   display: flex;
   justify-content: center;
-  //align-content: center;
-  //position: relative;
-
-  //align-self: center;
 
   &--orange {
     background-color: orange;
   }
 
-  img {
-    height: 30px;
-    width: auto;
+  .navChild {
+    &__image {
+      height: 3em;
+      width: auto;
+    }
   }
 
-  .site-search {
-    //position: absolute;
-    //top: 50%;
-    //right: $padding;
-    //transform: translateY(-50%);
+  .img_links_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: $padding;
+  }
+
+  input {
+    width: 45em;
   }
 
   &__link {
     font-weight: bold;
-    margin-left: 5px;
     color: #fff;
 
     &--active {

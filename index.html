@@ -8,21 +8,30 @@
   </head>
   <body class="toggle-me" onload="getPosts()">
     <nav class="top-bar top-bar--orange">
-      <img
-        src="https://source.unsplash.com/random/70x50"
-        alt="A random image"
-      />
-      <div>
-        <a href="./index.html" class="top-bar_link">Link</a>
-        <a href="./index.html" class="top-bar_link">Link</a>
-        <a href="./index.html" class="top-bar_link">Link</a>
-        <a href="./index.html" class="top-bar_link top-bar__link--active"
-          >Link</a
-        >
-      </div>
-      <div class="site-search">
-        <input type="search" name="q" />
-        <button>Search</button>
+      <div class="navChild">
+        <div class="img_links_wrapper">
+          <img
+            src="https://source.unsplash.com/random/70x50"
+            alt="A random image"
+            class="navChild__image"
+          />
+          <div class="navChild__links">
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link">Link</a>
+            <a href="./index.html" class="top-bar_link top-bar__link--active"
+              >Link</a
+            >
+          </div>
+        </div>
+        <div class="navChild" id="searchBar">
+          <input type="search" />
+          <button>Search</button>
+        </div>
       </div>
     </nav>
     <main>
