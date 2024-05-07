@@ -23,7 +23,7 @@ function createPreviewCard(card) {
 }
 
 function getPosts() {
-  fetch("../data/posts.json")
+  fetch("./data/posts.json")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
