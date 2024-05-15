@@ -6,7 +6,7 @@
     <script src="./script/script.js"></script>
     <title>BlogTemplate</title>
   </head>
-  <body class="toggle-me" onload="getPosts()">
+  <body class="toggle-me" onload="getPosts(); getNews()">
     <nav class="top-bar top-bar--orange">
       <div class="navChild">
         <div class="img_links_wrapper">
@@ -35,7 +35,10 @@
       </div>
     </nav>
     <main>
-      <h1 class="text-align-center">Lorem ipsum</h1>
+      <h3 class="text-align-center">News</h3>
+      <ul class="news-wrapper" id="postsLatestNews"></ul>
+
+      <h3 class="text-align-center">Latest Releases</h3>
       <ol id="filter"></ol>
       <ul class="card-wrapper" id="postsSummaries"></ul>
 

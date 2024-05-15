@@ -49,3 +49,27 @@ function getPostFromId() {
       }
     });
 }
+
+function createNewsCard(news) {
+  var wrapper = document.getElementById("postsLatestNews");
+  wrapper.innerHTML += `<li class="news-wrapper__card"><a href="./pages/post.html?id=${news.id}">
+    <img src="${news.previewImage}" alt="A random image" />
+    <div class="news-wrapper__content">
+    <h3>${news.title}</h3>
+    <p>${news.shortSummary}</p>
+    </div>
+    </a>
+    </li>`;
+}
+
+function getNews() {
+  fetch("./data/news.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      posts = data;
+      for (let i = 0; i < data.length; i++) {
+        createNewsCard(data[i]);
+      }
+    });
+}
