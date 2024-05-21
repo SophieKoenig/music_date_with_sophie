@@ -52,7 +52,7 @@ function getPostFromId() {
 
 function createNewsCard(news) {
   var wrapper = document.getElementById("postsLatestNews");
-  wrapper.innerHTML += `<li class="news-wrapper__card"><a href="./pages/post.html?id=${news.id}">
+  wrapper.innerHTML += `<li class="news-wrapper__section"><a href="./pages/post.html?id=${news.id}">
     <img src="${news.previewImage}" alt="A random image" />
     <div class="news-wrapper__content">
     <h3>${news.title}</h3>
