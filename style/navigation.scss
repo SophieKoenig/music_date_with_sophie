@@ -23,12 +23,26 @@
   }
 
   input {
-    width: 45em;
+    width: 70em;
+
+    @media screen and (max-width: 1000px) {
+      width: 50em;
+    }
+
+    @media screen and (max-width: 481px) {
+      width: 100%;
+      margin: 0;
+    }
   }
 
   &__link {
     font-weight: bold;
     color: #fff;
+
+    @media screen and (max-width: 1079px) {
+      font-size: 400px;
+      margin-top: 15px;
+    }
 
     &--active {
       border-bottom: 2px solid #fff;

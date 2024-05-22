@@ -18,11 +18,28 @@
   padding-bottom: 0.5em;
 }
 .top-bar input {
-  width: 45em;
+  width: 70em;
+}
+@media screen and (max-width: 1000px) {
+  .top-bar input {
+    width: 50em;
+  }
+}
+@media screen and (max-width: 481px) {
+  .top-bar input {
+    width: 100%;
+    margin: 0;
+  }
 }
 .top-bar__link {
   font-weight: bold;
   color: #fff;
+}
+@media screen and (max-width: 1079px) {
+  .top-bar__link {
+    font-size: 400px;
+    margin-top: 15px;
+  }
 }
 .top-bar__link--active {
   border-bottom: 2px solid #fff;
