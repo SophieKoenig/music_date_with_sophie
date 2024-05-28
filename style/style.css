@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
 }
-.top-bar--orange {
-  background-color: orange;
+.top-bar--color {
+  background-color: #444;
 }
 .top-bar .navChild__image {
   height: 3em;
@@ -16,6 +16,9 @@
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: 0.5em;
+}
+.top-bar .img_links_wrapper a {
+  color: beige;
 }
 .top-bar input {
   width: 70em;
@@ -33,7 +36,6 @@
 }
 .top-bar__link {
   font-weight: bold;
-  color: #fff;
 }
 @media screen and (max-width: 1079px) {
   .top-bar__link {
@@ -42,7 +44,7 @@
   }
 }
 .top-bar__link--active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid beige;
 }
 
 .card-wrapper {

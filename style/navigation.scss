@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
 
-  &--orange {
-    background-color: orange;
+  &--color {
+    background-color: $color;
   }
 
   .navChild {
@@ -20,6 +20,10 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: $padding;
+
+    a {
+      color: beige;
+    }
   }
 
   input {
@@ -37,7 +41,6 @@
 
   &__link {
     font-weight: bold;
-    color: #fff;
 
     @media screen and (max-width: 1079px) {
       font-size: 400px;
@@ -45,7 +48,7 @@
     }
 
     &--active {
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid beige;
     }
   }
 }
