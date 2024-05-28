@@ -1,5 +1,7 @@
 # music_date_with_sophie
+
 🎵 All Music Clone 🎵
+
 Welcome to the All Music Clone project! This web application is a tribute to my favorite music website, All Music. It aims to replicate its core features using classic web technologies and the Discogs API. 🎶
 
 🌟 Planned Features
