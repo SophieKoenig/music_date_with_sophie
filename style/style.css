@@ -3,6 +3,12 @@
   background-color: #444;
   display: flex;
   justify-content: center;
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  /* Standard CSS */
+  top: 0;
+  z-index: 1000;
 }
 .top-bar--color {
   background-color: #444;

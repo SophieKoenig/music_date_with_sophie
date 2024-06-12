@@ -3,6 +3,10 @@
   background-color: $color;
   display: flex;
   justify-content: center;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky; /* Standard CSS */
+  top: 0;
+  z-index: 1000;
 
   &--color {
     background-color: $color;
