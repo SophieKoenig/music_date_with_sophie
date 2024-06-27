@@ -6,7 +6,7 @@
     <script src="./script/script.js"></script>
     <title>BlogTemplate</title>
   </head>
-  <body class="toggle-me" onload="getPosts(); getNews()">
+  <body class="toggle-me" onload="getReviews(); getNews(); getReleases()">
     <nav class="top-bar top-bar--color">
       <div class="navChild">
         <div class="img_links_wrapper">
@@ -35,13 +35,17 @@
       </div>
     </nav>
     <main>
-      <ul class="news-wrapper" id="postsLatestNews"></ul>
+      <ul class="news-wrapper" id="postLatestNews"></ul>
 
       <h3 class="text-align-center">New Reviews for</h3>
       <ol id="filter"></ol>
-      <ul class="card-wrapper" id="postsSummaries"></ul>
+      <ul class="card-wrapper" id="postsNewReviews"></ul>
 
-      <section class="max-width">
+      <h3 class="text-align-center">More Recent Releases</h3>
+      <!-- <ol id="filter"></ol> -->
+      <ul class="card-wrapper" id="postsRecentReleases"></ul>
+
+      <!-- <section class="max-width">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in
           erat dolor. Nullam id enim et lectus commodo venenatis in nec eros. In
@@ -52,7 +56,7 @@
           porttitor libero. Quisque dui leo, efficitur ac lacus ac, ultrices
           consectetur dolor.
         </p>
-      </section>
+      </section> -->
     </main>
   </body>
 </html>

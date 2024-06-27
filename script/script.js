@@ -10,48 +10,8 @@ function findQuery(param) {
   return urlParams.get(param);
 }
 
-function createPreviewCard(card) {
-  var wrapper = document.getElementById("postsSummaries");
-  wrapper.innerHTML += `<li class="card-wrapper__card"><a href="./pages/post.html?id=${card.id}">
-    <img src="${card.previewImage}" alt="A random image" />
-    <div class="card-wrapper__content">
-    <h3>${card.title}</h3>
-    <p>${card.shortSummary}</p>
-    </div>
-    </a>
-    </li>`;
-}
-
-function getPosts() {
-  fetch("./data/posts.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      posts = data;
-      for (let i = 0; i < data.length; i++) {
-        createPreviewCard(data[i]);
-      }
-    });
-}
-
-function getPostFromId() {
-  var id = JSON.parse(findQuery("id"));
-  console.log("id", findQuery("id"));
-
-  fetch("../data/posts.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("data", data);
-      for (let i = 0; i < data.length; i++) {
-        if (id === data[i].id) {
-          populatePost(data[i]);
-        }
-      }
-    });
-}
-
 function createNewsCard(news) {
-  var wrapper = document.getElementById("postsLatestNews");
+  var wrapper = document.getElementById("postLatestNews");
   wrapper.innerHTML += `<li class="news-wrapper__section"><a href="./pages/post.html?id=${news.id}">
     <img src="${news.previewImage}" alt="A random image" />
     <div class="news-wrapper__content">
@@ -70,6 +30,69 @@ function getNews() {
       posts = data;
       for (let i = 0; i < data.length; i++) {
         createNewsCard(data[i]);
+      }
+    });
+}
+
+function createReviewCards(review) {
+  var wrapper = document.getElementById("postsNewReviews");
+  wrapper.innerHTML += `<li class="card-wrapper__card"><a href="./pages/post.html?id=${review.id}">
+    <img src="${review.previewImage}" alt="A random image" />
+    <div class="card-wrapper__content">
+    <h3>${review.title}</h3>
+    <p>${review.shortSummary}</p>
+    </div>
+    </a>
+    </li>`;
+}
+
+function getReviews() {
+  fetch("./data/reviews.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      posts = data;
+      for (let i = 0; i < data.length; i++) {
+        createReviewCards(data[i]);
+      }
+    });
+}
+
+function createReleasesCards(releases) {
+  var wrapper = document.getElementById("postsRecentReleases");
+  wrapper.innerHTML += `<li class="card-wrapper__card"><a href="./pages/post.html?id=${releases.id}">
+    <img src="${releases.previewImage}" alt="A random image" />
+    <div class="card-wrapper__content">
+    <h3>${releases.title}</h3>
+    </div>
+    </a>
+    </li>`;
+}
+
+function getReleases() {
+  fetch("./data/releases.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      posts = data;
+      for (let i = 0; i < data.length; i++) {
+        createReleasesCards(data[i]);
+      }
+    });
+}
+
+function getPostFromId() {
+  var id = JSON.parse(findQuery("id"));
+  console.log("id", findQuery("id"));
+
+  fetch("../data/posts.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("data", data);
+      for (let i = 0; i < data.length; i++) {
+        if (id === data[i].id) {
+          populatePost(data[i]);
+        }
       }
     });
 }
