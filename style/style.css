@@ -53,14 +53,14 @@
   border-bottom: 2px solid beige;
 }
 
-.card-wrapper {
+.review-wrapper {
   max-width: 1000px;
   width: 100%;
   margin: auto;
   font-size: 0;
   padding: 0;
 }
-.card-wrapper__card {
+.review-wrapper__card {
   width: calc(25% - 20px);
   margin: 10px;
   display: inline-block;
@@ -70,24 +70,24 @@
   font-size: 16px;
 }
 @media screen and (max-width: 1000px) {
-  .card-wrapper__card {
+  .review-wrapper__card {
     width: calc(50% - 20px);
   }
 }
 @media screen and (max-width: 481px) {
-  .card-wrapper__card {
+  .review-wrapper__card {
     width: 100%;
     margin: 0;
   }
 }
-.card-wrapper__card a {
+.review-wrapper__card a {
   text-decoration: none;
   color: #000;
 }
-.card-wrapper__card img {
+.review-wrapper__card img {
   width: 100%;
 }
-.card-wrapper__content {
+.review-wrapper__content {
   padding: 10px;
 }
 
@@ -135,6 +135,56 @@ h1 {
   font-size: 35px;
   font-weight: normal;
   margin-top: 30px;
+}
+
+.release-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.release-wrapper__card {
+  width: calc(12.5% - 20px);
+  margin: 10px;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+@media screen and (max-width: 1000px) {
+  .release-wrapper__card {
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (max-width: 481px) {
+  .release-wrapper__card {
+    width: 100%;
+    margin: 0;
+  }
+}
+.release-wrapper__card a {
+  text-decoration: none;
+  color: #000;
+}
+.release-wrapper__card img {
+  width: 100%;
+}
+.release-wrapper__content {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 30px;
+}
+@media screen and (max-width: 1079px) {
+  h1 {
+    font-size: 400px;
+    margin-top: 15px;
+  }
 }
 
 /* Applies to the entire body of the HTML document (except where overridden by more specific

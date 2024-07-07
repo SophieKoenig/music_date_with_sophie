@@ -36,9 +36,9 @@ function getNews() {
 
 function createReviewCards(review) {
   var wrapper = document.getElementById("postsNewReviews");
-  wrapper.innerHTML += `<li class="card-wrapper__card"><a href="./pages/post.html?id=${review.id}">
+  wrapper.innerHTML += `<li class="review-wrapper__card"><a href="./pages/post.html?id=${review.id}">
     <img src="${review.previewImage}" alt="A random image" />
-    <div class="card-wrapper__content">
+    <div class="review-wrapper__content">
     <h3>${review.title}</h3>
     <p>${review.shortSummary}</p>
     </div>
@@ -60,9 +60,9 @@ function getReviews() {
 
 function createReleasesCards(releases) {
   var wrapper = document.getElementById("postsRecentReleases");
-  wrapper.innerHTML += `<li class="card-wrapper__card"><a href="./pages/post.html?id=${releases.id}">
+  wrapper.innerHTML += `<li class="release-wrapper__card"><a href="./pages/post.html?id=${releases.id}">
     <img src="${releases.previewImage}" alt="A random image" />
-    <div class="card-wrapper__content">
+    <div class="release-wrapper__content">
     <h3>${releases.title}</h3>
     </div>
     </a>
