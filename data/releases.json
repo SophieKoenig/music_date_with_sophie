@@ -57,7 +57,7 @@
   },
 
   {
-    "id": 1,
+    "id": 5,
     "title": "Aeader post 5",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Artists",
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 6,
     "title": "Aeader post 6",
     "previewImage": "https://picsum.photos/500/500",
     "category": "News",
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 7,
     "title": "Feader post 7",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Books",
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 8,
     "title": "Header post 8",
     "previewImage": "https://picsum.photos/500/500",
     "category": "New York",

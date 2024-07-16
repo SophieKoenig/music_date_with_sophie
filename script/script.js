@@ -85,7 +85,7 @@ function getPostFromId() {
   var id = JSON.parse(findQuery("id"));
   console.log("id", findQuery("id"));
 
-  fetch("../data/posts.json")
+  fetch("../data/releases.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("data", data);
