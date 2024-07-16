@@ -47,12 +47,12 @@ function createReviewCards(review) {
 }
 
 function getReviews() {
-  fetch("./data/reviews.json")
+  fetch("./data/releases.json")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       posts = data;
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < 4; i++) {
         createReviewCards(data[i]);
       }
     });
