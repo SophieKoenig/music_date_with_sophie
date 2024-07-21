@@ -1,7 +1,8 @@
 function populatePost(post) {
-  document.getElementById("postTitle").innerHTML = post.title;
-  var content = post.content;
-  document.getElementById("postContent").innerHTML = content;
+  document.getElementById("postName").innerHTML = post.name;
+  // var content = post.content;
+  document.getElementById("postContent").innerHTML = post.content;
+  document.getElementById("postAlbumTitle").innerHTML = post.albumTitle;
 }
 
 function findQuery(param) {
@@ -39,7 +40,8 @@ function createReviewCards(review) {
   wrapper.innerHTML += `<li class="review-wrapper__card"><a href="./pages/post.html?id=${review.id}">
     <img src="${review.previewImage}" alt="A random image" />
     <div class="review-wrapper__content">
-    <h3>${review.title}</h3>
+    <h4>${review.name}</h4>
+    <h3>${review.albumTitle}</h3>
     <p>${review.shortSummary}</p>
     </div>
     </a>
@@ -63,7 +65,8 @@ function createReleasesCards(releases) {
   wrapper.innerHTML += `<li class="release-wrapper__card"><a href="./pages/post.html?id=${releases.id}">
     <img src="${releases.previewImage}" alt="A random image" />
     <div class="release-wrapper__content">
-    <h3>${releases.title}</h3>
+    <h4>${releases.name}</h4>
+    <h3>${releases.albumTitle}</h3>
     </div>
     </a>
     </li>`;

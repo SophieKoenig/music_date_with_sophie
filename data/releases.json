@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Aeader post 1",
+    "name": "Aeader post 1",
+    "albumTitle": "Title 1",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Artists",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -15,7 +16,8 @@
   },
   {
     "id": 2,
-    "title": "Aeader post 2",
+    "name": "Aeader post 2",
+    "albumTitle": "Title 2",
     "previewImage": "https://picsum.photos/500/500",
     "category": "News",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -29,7 +31,8 @@
   },
   {
     "id": 3,
-    "title": "Feader post 3",
+    "name": "Feader post 3",
+    "albumTitle": "Title 3",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Books",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -43,7 +46,8 @@
   },
   {
     "id": 4,
-    "title": "Header post 4",
+    "name": "Header post 4",
+    "albumTitle": "Title 4",
     "previewImage": "https://picsum.photos/500/500",
     "category": "New York",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -58,7 +62,8 @@
 
   {
     "id": 5,
-    "title": "Aeader post 5",
+    "name": "Aeader post 5",
+    "albumTitle": "Title 5",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Artists",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -72,7 +77,8 @@
   },
   {
     "id": 6,
-    "title": "Aeader post 6",
+    "name": "Aeader post 6",
+    "albumTitle": "Title 6",
     "previewImage": "https://picsum.photos/500/500",
     "category": "News",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -86,7 +92,8 @@
   },
   {
     "id": 7,
-    "title": "Feader post 7",
+    "name": "Feader post 7",
+    "albumTitle": "Title 7",
     "previewImage": "https://picsum.photos/500/500",
     "category": "Books",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -100,7 +107,8 @@
   },
   {
     "id": 8,
-    "title": "Header post 8",
+    "name": "Header post 8",
+    "albumTitle": "Title 8",
     "previewImage": "https://picsum.photos/500/500",
     "category": "New York",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
