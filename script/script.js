@@ -1,14 +1,51 @@
-function populatePost(post) {
+function findQuery(param) {
+  //console.log(param);
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function populateNewsPost(post) {
   document.getElementById("postName").innerHTML = post.name;
-  // var content = post.content;
   document.getElementById("postContent").innerHTML = post.content;
   document.getElementById("postAlbumTitle").innerHTML = post.albumTitle;
 }
 
-function findQuery(param) {
-  console.log(param);
-  var urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+function populateReleasePost(post) {
+  document.getElementById("postName").innerHTML = post.name;
+  document.getElementById("postContent").innerHTML = post.content;
+  document.getElementById("postAlbumTitle").innerHTML = post.albumTitle;
+}
+
+function getNewsPostFromId() {
+  var id = JSON.parse(findQuery("id"));
+  //console.log("id", findQuery("id"));
+
+  fetch("../data/news.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("newsData", data);
+      for (let i = 0; i < data.length; i++) {
+        if (id === data[i].id) {
+          populateNewsPost(data[i]);
+        }
+      }
+    });
+}
+
+function getReleasePostFromId() {
+  var id = JSON.parse(findQuery("id"));
+  //console.log("id", findQuery("id"));
+
+  fetch("../data/releases.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("releaseData", data);
+      for (let i = 0; i < data.length; i++) {
+        if (id === data[i].id) {
+          populateReleasePost(data[i]);
+        }
+      }
+    });
 }
 
 function createNewsCard(news) {
@@ -16,7 +53,7 @@ function createNewsCard(news) {
   wrapper.innerHTML += `<li class="news-wrapper__section"><a href="./pages/post.html?id=${news.id}">
     <img src="${news.previewImage}" alt="A random image" />
     <div class="news-wrapper__content">
-    <h3>${news.title}</h3>
+    <h3>${news.name}</h3>
     <p>${news.shortSummary}</p>
     </div>
     </a>
@@ -80,22 +117,6 @@ function getReleases() {
       posts = data;
       for (let i = 0; i < data.length; i++) {
         createReleasesCards(data[i]);
-      }
-    });
-}
-
-function getPostFromId() {
-  var id = JSON.parse(findQuery("id"));
-  console.log("id", findQuery("id"));
-
-  fetch("../data/releases.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("data", data);
-      for (let i = 0; i < data.length; i++) {
-        if (id === data[i].id) {
-          populatePost(data[i]);
-        }
       }
     });
 }

@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Aeader post 1",
+    "name": "News Header post 1",
+    "albumTitle": "Title 1",
     "previewImage": "https://picsum.photos/500/300",
     "category": "Artists",
     "shortSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
