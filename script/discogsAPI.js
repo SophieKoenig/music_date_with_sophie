@@ -3,7 +3,7 @@ const url = 'https://api.discogs.com/releases/249504';
 
 // Define the headers, including the User-Agent
 const headers = {
-    'User-Agent': 'soffanDiscogsClient/1.0 +http://mydiscogsclient.org',
+    'User-Agent': 'soffanDiscogsClient/1.0 HTTPClient/1.1',
     'Accept': 'application/vnd.discogs.v2.discogs+json'
 };
 
