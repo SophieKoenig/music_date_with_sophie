@@ -1,3 +1,5 @@
+//import { url, headers, apiData } from "./discogsAPI";
+
 function findQuery(param) {
   //console.log(param);
   var urlParams = new URLSearchParams(window.location.search);
@@ -20,7 +22,7 @@ function getNewsPostFromId() {
   var id = JSON.parse(findQuery("id"));
   //console.log("id", findQuery("id"));
 
-  fetch("../data/news.json")
+  fetch("./data/news.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("newsData", data);
@@ -36,7 +38,7 @@ function getReleasePostFromId() {
   var id = JSON.parse(findQuery("id"));
   //console.log("id", findQuery("id"));
 
-  fetch("../data/releases.json")
+  fetch("./data/releases.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("releaseData", data);
@@ -60,7 +62,7 @@ function createNewsCard(news) {
     </li>`;
 }
 
-function getNews() {
+function getNews(posts) {
   fetch("./data/news.json")
     .then((response) => response.json())
     .then((data) => {
@@ -71,6 +73,8 @@ function getNews() {
       }
     });
 }
+
+window.addEventListener("load", getNews);
 
 function createReviewCards(review) {
   var wrapper = document.getElementById("postsNewReviews");
@@ -85,7 +89,7 @@ function createReviewCards(review) {
     </li>`;
 }
 
-function getReviews() {
+function getReviews(posts) {
   fetch("./data/releases.json")
     .then((response) => response.json())
     .then((data) => {
@@ -96,6 +100,8 @@ function getReviews() {
       }
     });
 }
+
+window.addEventListener("load", getReviews);
 
 function createReleasesCards(releases) {
   var wrapper = document.getElementById("postsRecentReleases");
@@ -109,7 +115,7 @@ function createReleasesCards(releases) {
     </li>`;
 }
 
-function getReleases() {
+function getReleases(posts) {
   fetch("./data/releases.json")
     .then((response) => response.json())
     .then((data) => {
@@ -120,3 +126,8 @@ function getReleases() {
       }
     });
 }
+
+window.addEventListener("load", getReleases);
+
+// const getDataFromApi = apiData();
+// console.log("apiData", getDataFromApi);
