@@ -22,7 +22,7 @@ function getNewsPostFromId() {
   var id = JSON.parse(findQuery("id"));
   //console.log("id", findQuery("id"));
 
-  fetch("./data/news.json")
+  fetch("../data/news.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("newsData", data);
@@ -38,7 +38,7 @@ function getReleasePostFromId() {
   var id = JSON.parse(findQuery("id"));
   //console.log("id", findQuery("id"));
 
-  fetch("./data/releases.json")
+  fetch("../data/releases.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("releaseData", data);
