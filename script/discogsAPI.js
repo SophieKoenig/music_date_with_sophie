@@ -1,4 +1,4 @@
-//export { url, headers, apiData };
+export { apiData };
 
 // Define the URL of the resource you want to fetch
 const url = "https://api.discogs.com/releases/249504";
@@ -10,7 +10,7 @@ const headers = {
 };
 
 // Use the fetch API to make a GET request to the Discogs API
-export function apiData() {
+function apiData() {
   fetch(url, { headers })
     .then((response) => {
       // Check if the response is ok (status 200-299)

@@ -1,4 +1,4 @@
-//import { url, headers, apiData } from "./discogsAPI";
+import { apiData } from "./discogsAPI.js";
 
 function findQuery(param) {
   //console.log(param);
@@ -129,5 +129,5 @@ function getReleases(posts) {
 
 window.addEventListener("load", getReleases);
 
-// const getDataFromApi = apiData();
-// console.log("apiData", getDataFromApi);
+const getDataFromApi = apiData();
+console.log("apiData", getDataFromApi);
