@@ -4,9 +4,14 @@
     <title>music.date.with.sophie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../style/style.css" />
-    <script src="../script/script.js"></script>
+    <script type="module" src="../script/script.js">
+      import {getNewsPostFromId} from "../script/script.js";
+      getNewsPostFromId();
+      import {getReleasePostFromId} from "../script/script.js";
+      getReleasePostFromId();
+    </script>
   </head>
-  <body class="toggle-me" onload="getNewsPostFromId(); getReleasePostFromId()">
+  <body>
     <nav class="top-bar top-bar--color">
       <div class="navChild">
         <div class="img_links_wrapper">
@@ -35,7 +40,7 @@
       </div>
       <!-- <a href="../index.html">Start</a> -->
     </nav>
-    <main>
+    <main class="max-width">
       <h1 id="postName">My First Heading</h1>
       <h2 id="postAlbumTitle"></h2>
       <div id="postContent"></div>

@@ -34,11 +34,13 @@ function getNewsPostFromId() {
     });
 }
 
+window.addEventListener("load", getNewsPostFromId);
+
 function getReleasePostFromId() {
   var id = JSON.parse(findQuery("id"));
   //console.log("id", findQuery("id"));
 
-  fetch("../data/releases.json")
+  fetch("./data/releases.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("releaseData", data);
@@ -49,6 +51,8 @@ function getReleasePostFromId() {
       }
     });
 }
+
+window.addEventListener("load", getReleasePostFromId);
 
 function createNewsCard(news) {
   var wrapper = document.getElementById("postLatestNews");
