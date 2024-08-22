@@ -22,10 +22,11 @@ Prerequisites\
 To run this project, you need a modern web browser and an internet connection.
 
 🚀 Current Progress\
+
 ![Alt Text](https://github.com/SophieKoenig/music_date_with_sophie/blob/main/AllMusicGIF.gif)
 
 Home Page\
-The home page is currently under development. It will serve as the entry point for users to explore the music library and access other features of the site.
+The home page is currently under development. It will serve as the entry point for users to explore the music library and access other features of the site.\
 Post Page\
 The post page is currently under development. It will show a detailed version of the post shown on the start page.
 
