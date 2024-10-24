@@ -1,0 +1,19 @@
+{
+  "name": "music_date_with_sophie",
+  "version": "1.0.0",
+  "description": "🎵 All Music Clone 🎵\\\r Welcome to the All Music Clone project! This web application is a tribute to my favorite music website, All Music. It aims to replicate its core features using classic web technologies and the Discogs API. 🎶",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophieKoenig/music_date_with_sophie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SophieKoenig/music_date_with_sophie/issues"
+  },
+  "homepage": "https://github.com/SophieKoenig/music_date_with_sophie#readme"
+}
