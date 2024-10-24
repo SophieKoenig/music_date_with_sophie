@@ -4,7 +4,7 @@
   "description": "🎵 All Music Clone 🎵\\\r Welcome to the All Music Clone project! This web application is a tribute to my favorite music website, All Music. It aims to replicate its core features using classic web technologies and the Discogs API. 🎶",
   "main": "index.html",
   "scripts": {
-    "start": "serve"
+    "build": "echo 'No build step required, because serving static flies without a framework or bundler"
   },
   "repository": {
     "type": "git",
