@@ -1,31 +1,22 @@
-export { apiData };
+import { DISCOGS_TOKEN } from "../config.js";
 
-// Define the URL of the resource you want to fetch
-const url = "https://api.discogs.com/releases/249504";
+// Fetch recent releases (example: by genre, label, or general search)
+function fetchRecentReleases() {
+  const url =
+    "https://api.discogs.com/database/search?type=release&sort=year&sort_order=desc&per_page=8&genre=rock";
+  const headers = {
+    "User-Agent": "sophie.konig/1.0 HTTPClient/1.1",
+    Accept: "application/vnd.discogs.v2.discogs+json",
+    Authorization: `Discogs token=${DISCOGS_TOKEN}`, // If you have a token
+  };
 
-// Define the headers, including the User-Agent
-const headers = {
-  "User-Agent": "soffanDiscogsClient/1.0 HTTPClient/1.1",
-  Accept: "application/vnd.discogs.v2.discogs+json",
-};
-
-// Use the fetch API to make a GET request to the Discogs API
-function apiData() {
-  fetch(url, { headers })
-    .then((response) => {
-      // Check if the response is ok (status 200-299)
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      // Parse the JSON from the response
-      return response.json();
-    })
-    .then((data) => {
-      // Log the data to the console (or process it as needed)
-      console.log(data);
-    })
+  return fetch(url, { headers })
+    .then((response) => response.json())
+    .then((data) => data.results)
     .catch((error) => {
-      // Handle any errors that occurred during the fetch
-      console.error("There was a problem with the fetch operation:", error);
+      console.error("Discogs fetch error:", error);
+      return [];
     });
 }
+
+export { fetchRecentReleases };

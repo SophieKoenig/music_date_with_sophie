@@ -1,137 +1,43 @@
-import { apiData } from "./discogsAPI.js";
+import { fetchRecentReleases } from "./discogsAPI.js";
 
-function findQuery(param) {
-  //console.log(param);
-  var urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+// Helper to create a card from Discogs release data
+function createReleaseCard(release, wrapperId) {
+  const wrapper = document.getElementById(wrapperId);
+  wrapper.innerHTML += `
+    <li class="release-wrapper__card">
+      <a href="${release.resource_url}" target="_blank">
+        <img src="${
+          release.cover_image || "https://via.placeholder.com/150"
+        }" alt="${release.title}" />
+        <div class="release-wrapper__content">
+          <h4>${release.title}</h4>
+          <h3>${release.year || ""}</h3>
+          <p>${release.artist || release.artist_name || ""}</p>
+        </div>
+      </a>
+    </li>
+  `;
 }
 
-function populateNewsPost(post) {
-  document.getElementById("postName").innerHTML = post.name;
-  document.getElementById("postContent").innerHTML = post.content;
-  document.getElementById("postAlbumTitle").innerHTML = post.albumTitle;
+// Populate all sections with Discogs data
+function populateAllSections() {
+  fetchRecentReleases().then((releases) => {
+    // News section (first 2)
+    document.getElementById("postLatestNews").innerHTML = "";
+    releases.slice(0, 2).forEach((r) => createReleaseCard(r, "postLatestNews"));
+
+    // Reviews section (next 4)
+    document.getElementById("postsNewReviews").innerHTML = "";
+    releases
+      .slice(2, 6)
+      .forEach((r) => createReleaseCard(r, "postsNewReviews"));
+
+    // Recent Releases section (last 4)
+    document.getElementById("postsRecentReleases").innerHTML = "";
+    releases
+      .slice(4, 8)
+      .forEach((r) => createReleaseCard(r, "postsRecentReleases"));
+  });
 }
 
-function populateReleasePost(post) {
-  document.getElementById("postName").innerHTML = post.name;
-  document.getElementById("postContent").innerHTML = post.content;
-  document.getElementById("postAlbumTitle").innerHTML = post.albumTitle;
-}
-
-function getNewsPostFromId() {
-  var id = JSON.parse(findQuery("id"));
-  //console.log("id", findQuery("id"));
-
-  fetch("../data/news.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("newsData", data);
-      for (let i = 0; i < data.length; i++) {
-        if (id === data[i].id) {
-          populateNewsPost(data[i]);
-        }
-      }
-    });
-}
-
-window.addEventListener("load", getNewsPostFromId);
-
-function getReleasePostFromId() {
-  var id = JSON.parse(findQuery("id"));
-  //console.log("id", findQuery("id"));
-
-  fetch("../data/releases.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("releaseData", data);
-      for (let i = 0; i < data.length; i++) {
-        if (id === data[i].id) {
-          populateReleasePost(data[i]);
-        }
-      }
-    });
-}
-
-window.addEventListener("load", getReleasePostFromId);
-
-function createNewsCard(news) {
-  var wrapper = document.getElementById("postLatestNews");
-  wrapper.innerHTML += `<li class="news-wrapper__section"><a href="./pages/post.html?id=${news.id}">
-    <img src="${news.previewImage}" alt="A random image" />
-    <div class="news-wrapper__content">
-    <h3>${news.name}</h3>
-    <p>${news.shortSummary}</p>
-    </div>
-    </a>
-    </li>`;
-}
-
-function getNews(posts) {
-  fetch("./data/news.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      posts = data;
-      for (let i = 0; i < data.length; i++) {
-        createNewsCard(data[i]);
-      }
-    });
-}
-
-window.addEventListener("load", getNews);
-
-function createReviewCards(review) {
-  var wrapper = document.getElementById("postsNewReviews");
-  wrapper.innerHTML += `<li class="review-wrapper__card"><a href="./pages/post.html?id=${review.id}">
-    <img src="${review.previewImage}" alt="A random image" />
-    <div class="review-wrapper__content">
-    <h4>${review.name}</h4>
-    <h3>${review.albumTitle}</h3>
-    <p>${review.shortSummary}</p>
-    </div>
-    </a>
-    </li>`;
-}
-
-function getReviews(posts) {
-  fetch("./data/releases.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      posts = data;
-      for (let i = 0; i < 4; i++) {
-        createReviewCards(data[i]);
-      }
-    });
-}
-
-window.addEventListener("load", getReviews);
-
-function createReleasesCards(releases) {
-  var wrapper = document.getElementById("postsRecentReleases");
-  wrapper.innerHTML += `<li class="release-wrapper__card"><a href="./pages/post.html?id=${releases.id}">
-    <img src="${releases.previewImage}" alt="A random image" />
-    <div class="release-wrapper__content">
-    <h4>${releases.name}</h4>
-    <h3>${releases.albumTitle}</h3>
-    </div>
-    </a>
-    </li>`;
-}
-
-function getReleases(posts) {
-  fetch("./data/releases.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      posts = data;
-      for (let i = 0; i < data.length; i++) {
-        createReleasesCards(data[i]);
-      }
-    });
-}
-
-window.addEventListener("load", getReleases);
-
-const getDataFromApi = apiData();
-console.log("apiData", getDataFromApi);
+window.addEventListener("load", populateAllSections);
