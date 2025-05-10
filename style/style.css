@@ -61,24 +61,10 @@
   padding: 0;
 }
 .review-wrapper__card {
-  width: calc(25% - 20px);
-  margin: 10px;
-  display: inline-block;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
-}
-@media screen and (max-width: 1000px) {
-  .review-wrapper__card {
-    width: calc(50% - 20px);
-  }
-}
-@media screen and (max-width: 481px) {
-  .review-wrapper__card {
-    width: 100%;
-    margin: 0;
-  }
 }
 .review-wrapper__card a {
   text-decoration: none;
@@ -86,21 +72,10 @@
 }
 .review-wrapper__card img {
   width: 100%;
+  object-fit: cover;
 }
 .review-wrapper__content {
   padding: 10px;
-}
-
-h1 {
-  font-size: 35px;
-  font-weight: normal;
-  margin-top: 30px;
-}
-@media screen and (max-width: 1079px) {
-  h1 {
-    font-size: 400px;
-    margin-top: 15px;
-  }
 }
 
 .news-wrapper {
@@ -111,8 +86,6 @@ h1 {
   padding: 0;
 }
 .news-wrapper__section {
-  display: flex;
-  align-items: flex-start;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -125,16 +98,11 @@ h1 {
 }
 .news-wrapper__section img {
   width: 60%;
+  object-fit: cover;
 }
 .news-wrapper__content {
   padding: 10px;
   flex-wrap: wrap;
-}
-
-h1 {
-  font-size: 35px;
-  font-weight: normal;
-  margin-top: 30px;
 }
 
 .release-wrapper {
@@ -145,24 +113,10 @@ h1 {
   padding: 0;
 }
 .release-wrapper__card {
-  width: calc(12.5% - 20px);
-  margin: 10px;
-  display: inline-block;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
-}
-@media screen and (max-width: 1000px) {
-  .release-wrapper__card {
-    width: calc(50% - 20px);
-  }
-}
-@media screen and (max-width: 481px) {
-  .release-wrapper__card {
-    width: 100%;
-    margin: 0;
-  }
 }
 .release-wrapper__card a {
   text-decoration: none;
@@ -170,23 +124,58 @@ h1 {
 }
 .release-wrapper__card img {
   width: 100%;
+  object-fit: cover;
 }
 .release-wrapper__content {
   padding: 10px;
 }
 
-h1 {
-  font-size: 35px;
-  font-weight: normal;
-  margin-top: 30px;
-}
-@media screen and (max-width: 1079px) {
-  h1 {
-    font-size: 400px;
-    margin-top: 15px;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 32px 0;
+  list-style: none;
 }
 
+.card-container > li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex: 1 1 calc(33.33% - 32px);
+  max-width: 340px;
+  min-width: 260px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container > li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 900px) {
+  .card-container > li {
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container > li {
+    flex: 1 1 100%;
+    max-width: 95vw;
+  }
+}
 /* Applies to the entire body of the HTML document (except where overridden by more specific
 selectors). */
 body,
