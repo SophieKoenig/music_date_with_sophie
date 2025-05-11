@@ -7,7 +7,7 @@ function fetchRecentReleases() {
   const headers = {
     "User-Agent": "sophie.konig/1.0 HTTPClient/1.1",
     Accept: "application/vnd.discogs.v2.discogs+json",
-    Authorization: `Discogs token=${DISCOGS_TOKEN}`, // If you have a token
+    Authorization: `Discogs token=${DISCOGS_TOKEN}`,
   };
 
   return fetch(url, { headers })
@@ -19,4 +19,25 @@ function fetchRecentReleases() {
     });
 }
 
-export { fetchRecentReleases };
+// Fetch detailed information for a specific release
+function fetchReleaseDetails(releaseId) {
+  const url = `https://api.discogs.com/releases/${releaseId}`;
+  const headers = {
+    "User-Agent": "sophie.konig/1.0 HTTPClient/1.1",
+    Accept: "application/vnd.discogs.v2.discogs+json",
+    Authorization: `Discogs token=${DISCOGS_TOKEN}`,
+  };
+
+  return fetch(url, { headers })
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Error fetching release details:", error);
+      return null;
+    });
+}
+
+export { fetchRecentReleases, fetchReleaseDetails };

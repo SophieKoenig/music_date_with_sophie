@@ -176,6 +176,68 @@
     max-width: 95vw;
   }
 }
+.release-details {
+  padding: 2rem 1rem;
+}
+.release-details .release-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.release-details .release-header .release-cover {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.release-details .release-header .release-meta {
+  flex: 1;
+  min-width: 300px;
+}
+.release-details .release-header .release-meta h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+.release-details .release-header .release-meta h2 {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+.release-details .release-header .release-meta p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.release-details .tracklist-section {
+  margin: 2rem 0;
+}
+.release-details .tracklist-section ol {
+  padding-left: 1.5rem;
+  columns: 2;
+}
+@media (max-width: 600px) {
+  .release-details .tracklist-section ol {
+    columns: 1;
+  }
+}
+.release-details .extra-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.release-details .extra-info .info-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.release-details .extra-info .info-box h4 {
+  margin: 0 0 0.5rem;
+  color: #444;
+}
+
 /* Applies to the entire body of the HTML document (except where overridden by more specific
 selectors). */
 body,
