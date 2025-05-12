@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Release Details | music.date.with.sophie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/style.css" />
-    <script type="module" src="../script/discogsAPI.js"></script>
   </head>
   <body>
     <nav class="top-bar top-bar--color">
@@ -20,7 +19,6 @@
           </a>
           <div class="navChild__links">
             <a href="../index.html" class="top-bar_link">Home</a>
-            <!-- Update these links as needed -->
             <a href="../index.html" class="top-bar_link">News</a>
             <a href="../index.html" class="top-bar_link">Releases</a>
             <a href="../index.html" class="top-bar_link">Reviews</a>
@@ -34,12 +32,9 @@
     </nav>
 
     <main class="release-details max-width">
-      <!-- Loading state -->
       <div id="loading" class="text-align-center">
         Loading release details...
       </div>
-
-      <!-- Error state -->
       <div
         id="error"
         class="text-align-center"
@@ -47,8 +42,6 @@
       >
         Error loading release details.
       </div>
-
-      <!-- Release content (hidden until loaded) -->
       <div id="releaseContent" style="display: none">
         <div class="release-header">
           <img id="releaseCover" alt="Album cover" class="release-cover" />
@@ -64,6 +57,11 @@
         <section class="tracklist-section">
           <h3>Tracklist</h3>
           <ol id="tracklist"></ol>
+        </section>
+
+        <section class="collaborators-section">
+          <h3>Key Collaborators</h3>
+          <ul id="collaboratorsList"></ul>
         </section>
 
         <section class="extra-info">
@@ -83,89 +81,6 @@
       </div>
     </main>
 
-    <script type="module">
-      import { fetchReleaseDetails } from "../script/discogsAPI.js";
-
-      // Get release ID from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const releaseId = urlParams.get("id");
-
-      // Elements
-      const loadingEl = document.getElementById("loading");
-      const errorEl = document.getElementById("error");
-      const contentEl = document.getElementById("releaseContent");
-
-      if (releaseId) {
-        fetchReleaseDetails(releaseId)
-          .then((data) => {
-            if (data) {
-              populateReleaseData(data);
-              contentEl.style.display = "block";
-              loadingEl.style.display = "none";
-            } else {
-              showError();
-            }
-          })
-          .catch(() => showError());
-      } else {
-        showError("No release ID specified");
-      }
-
-      function populateReleaseData(release) {
-        // Basic info
-        document.getElementById("releaseTitle").textContent = release.title;
-        document.getElementById("releaseArtist").textContent =
-          release.artists?.map((a) => a.name).join(", ") || "Unknown artist";
-        document.getElementById("releaseYear").textContent =
-          release.year || "Unknown year";
-        document.getElementById("releaseGenre").textContent =
-          release.genres?.join(", ") || "Unknown genre";
-        document.getElementById("releaseLabel").textContent =
-          release.labels?.[0]?.name || "Unknown label";
-        document.getElementById("releaseCountry").textContent =
-          release.country || "Unknown";
-        document.getElementById("releaseFormat").textContent =
-          release.formats
-            ?.map((f) => `${f.name}${f.qty > 1 ? ` (${f.qty}x)` : ""}`)
-            .join(", ") || "Unknown";
-
-        // Cover image
-        const coverImg = document.getElementById("releaseCover");
-        if (release.images?.[0]?.uri) {
-          coverImg.src = release.images[0].uri;
-        } else {
-          coverImg.src = "https://via.placeholder.com/400x400?text=No+Image";
-        }
-
-        // Tracklist
-        const tracklistEl = document.getElementById("tracklist");
-        if (release.tracklist?.length > 0) {
-          tracklistEl.innerHTML = release.tracklist
-            .map(
-              (track) =>
-                `<li>${track.position} - ${track.title} ${
-                  track.duration ? `(${track.duration})` : ""
-                }</li>`
-            )
-            .join("");
-        } else {
-          tracklistEl.innerHTML = "<li>No tracklist available</li>";
-        }
-
-        // Discogs link
-        const discogsLink = document.getElementById("discogsLink");
-        if (release.uri) {
-          discogsLink.href = release.uri;
-        } else {
-          discogsLink.style.display = "none";
-        }
-      }
-
-      function showError(message) {
-        loadingEl.style.display = "none";
-        errorEl.style.display = "block";
-        if (message) errorEl.textContent = message;
-      }
-    </script>
+    <script type="module" src="../script/post.js"></script>
   </body>
 </html>
