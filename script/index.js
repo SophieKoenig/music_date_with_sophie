@@ -1,5 +1,7 @@
 import { fetchRecentReleases } from "./discogsAPI.js";
 
+const PLACEHOLDER_IMG = "../missingTrack2.jpg";
+
 // Helper to extract artist names from Discogs search result
 function getArtistName(release) {
   if (release.artist) return release.artist;
@@ -13,13 +15,15 @@ function getArtistName(release) {
 // Helper to create a card from Discogs release data
 function createReleaseCard(release, wrapperId) {
   const wrapper = document.getElementById(wrapperId);
-  // Link to the details page with the release ID
+  // Use placeholder if cover_image is missing, empty, or null
+  const imgSrc =
+    release.cover_image && release.cover_image.trim() !== ""
+      ? release.cover_image
+      : PLACEHOLDER_IMG;
   wrapper.innerHTML += `
     <li class="release-wrapper__card">
       <a href="pages/post.html?id=${release.id}">
-        <img src="${
-          release.cover_image || "https://via.placeholder.com/150"
-        }" alt="${release.title}" />
+        <img src="${imgSrc}" alt="${release.title}" />
         <div class="release-wrapper__content">
           <h4>${release.title}</h4>
           <h3>${release.year || ""}</h3>

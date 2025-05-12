@@ -1,5 +1,7 @@
 import { fetchReleaseDetails } from "./discogsAPI.js";
 
+const PLACEHOLDER_IMG = "../missingTrack2.jpg";
+
 const urlParams = new URLSearchParams(window.location.search);
 const releaseId = urlParams.get("id");
 
@@ -41,9 +43,14 @@ function populateReleaseData(release) {
       .join(", ") || "Unknown";
 
   const coverImg = document.getElementById("releaseCover");
+  // Use placeholder if no image
   coverImg.src =
-    release.images?.[0]?.uri ||
-    "https://via.placeholder.com/400x400?text=No+Image";
+    release.images &&
+    release.images[0] &&
+    release.images[0].uri &&
+    release.images[0].uri.trim() !== ""
+      ? release.images[0].uri
+      : PLACEHOLDER_IMG;
 
   const tracklistEl = document.getElementById("tracklist");
   if (release.tracklist?.length > 0) {
