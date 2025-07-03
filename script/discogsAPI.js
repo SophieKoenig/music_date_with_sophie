@@ -1,5 +1,3 @@
-import { DISCOGS_TOKEN } from "../config.js";
-
 // Fetch recent releases (example: by genre, label, or general search)
 function fetchRecentReleases() {
   const url = "../netlify/functions/fetchDiscogs";
