@@ -1,6 +1,5 @@
 # music_date_with_sophie
 
-Music Date with Sophie \
 Welcome to my music blog project! This web application is a tribute to my favorite music website, All Music. It aims to replicate its core features using classic web technologies and the Discogs API. 
 
 Planned Features\
