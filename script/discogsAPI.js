@@ -11,9 +11,15 @@ function fetchRecentReleases() {
 }
 
 // Fetch detailed information for a specific release (if you have a function for this)
+// discogsAPI.js
+
 function fetchReleaseDetails(releaseId) {
   return fetch(`/.netlify/functions/fetchDiscogsDetails?id=${releaseId}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
     .catch((error) => {
       console.error("Error fetching release details:", error);
       return null;
