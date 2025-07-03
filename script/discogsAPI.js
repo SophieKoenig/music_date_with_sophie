@@ -1,36 +1,19 @@
-// Fetch recent releases (example: by genre, label, or general search)
-function fetchRecentReleases() {
-  const url = "../netlify/functions/fetchDiscogs";
-  const headers = {
-    "User-Agent": "sophie.konig/1.0 HTTPClient/1.1",
-    Accept: "application/vnd.discogs.v2.discogs+json",
-    Authorization: `Discogs token=${DISCOGS_TOKEN}`,
-  };
+// discogsAPI.js
 
-  return fetch(url)
+// Fetch recent releases from your Netlify function
+function fetchRecentReleases() {
+  return fetch("../netlify/functions/fetchDiscogs")
     .then((response) => response.json())
-    .then((data) => data)
     .catch((error) => {
       console.error("Discogs fetch error:", error);
       return [];
     });
 }
 
-// Fetch detailed information for a specific release
+// Fetch detailed information for a specific release (if you have a function for this)
 function fetchReleaseDetails(releaseId) {
-  const url = `../netlify/functions/fetchDiscogsDetails?id=${releaseId}`;
-  const headers = {
-    "User-Agent": "sophie.konig/1.0 HTTPClient/1.1",
-    Accept: "application/vnd.discogs.v2.discogs+json",
-    Authorization: `Discogs token=${DISCOGS_TOKEN}`,
-  };
-
-  return fetch(url)
-    .then((response) => {
-      if (!response.ok)
-        throw new Error(`HTTP error! status: ${response.status}`);
-      return response.json();
-    })
+  return fetch(`../netlify/functions/fetchDiscogsDetails?id=${releaseId}`)
+    .then((response) => response.json())
     .catch((error) => {
       console.error("Error fetching release details:", error);
       return null;
