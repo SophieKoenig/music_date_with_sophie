@@ -6,9 +6,6 @@
   "scripts": {
     "build": "echo 'No build step required, because serving static flies without a framework or bundler'"
   },
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SophieKoenig/music_date_with_sophie.git"
@@ -18,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SophieKoenig/music_date_with_sophie/issues"
   },
-  "homepage": "https://github.com/SophieKoenig/music_date_with_sophie#readme"
+  "homepage": "https://github.com/SophieKoenig/music_date_with_sophie#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
