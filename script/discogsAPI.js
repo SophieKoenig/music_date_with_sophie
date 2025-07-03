@@ -2,7 +2,7 @@
 
 // Fetch recent releases from your Netlify function
 function fetchRecentReleases() {
-  return fetch("/.netlify/functions/fetchDiscogs")
+  return fetch("../.netlify/functions/fetchDiscogs")
     .then((response) => response.json())
     .catch((error) => {
       console.error("Discogs fetch error:", error);
@@ -12,7 +12,7 @@ function fetchRecentReleases() {
 
 // Fetch detailed information for a specific release (if you have a function for this)
 function fetchReleaseDetails(releaseId) {
-  return fetch(`/.netlify/functions/fetchDiscogsDetails?id=${releaseId}`)
+  return fetch(`../.netlify/functions/fetchDiscogsDetails?id=${releaseId}`)
     .then((response) => response.json())
     .catch((error) => {
       console.error("Error fetching release details:", error);
