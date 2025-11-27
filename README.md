@@ -1,9 +1,9 @@
 # music_date_with_sophie
 
-Welcome to my music blog project! This web application is a tribute to my favorite music website, All Music. It aims to replicate its core features using classic web technologies and the Discogs API. 
+Welcome to my music blog project! This web application is a tribute to my favorite music website, All Music, and currently lets you browse Discogs releases on a home page with individual detail pages for each entry. It aims to replicate its core features using classic web technologies and the Discogs API.
 
 Planned Features\
-Music Library: Browse a vast collection of music albums, artists, and tracks sourced from the Discogs API.\
+Music Library: Browse a growing collection of music releases (albums, EPs, and singles) sourced from the Discogs API. Each entry on the home page links to a dedicated detail page with more information.\
 Reviews: Read and write reviews for your favorite albums and tracks.\
 Commentary Sections: Engage in discussions and share your thoughts with other music enthusiasts.\
 Rating Functionality: Rate albums and tracks to share your opinion with the community.\
@@ -21,15 +21,14 @@ Prerequisites\
 To run this project, you need a modern web browser and an internet connection.
 
 Current Progress\
-![Alt Text](https://github.com/SophieKoenig/music_date_with_sophie/blob/main/AllMusicGIF.gif)\
 Home Page\
-The home page is currently under development. It will serve as the entry point for users to explore the music library and access other features of the site.\
-Post Page\
-The post page is currently under development. It will show a detailed version of the post shown on the start page.
+The home page now displays multiple entries fetched from the Discogs API and serves as the starting point for exploring the music library.
+Post Pages\
+Each entry on the home page links to its own post page, which shows more detailed information about the selected release.
 
 Future Goals\
-Complete Home Page: Design a user-friendly and visually appealing home page.\
-Implement Music Library: Integrate with the Discogs API to display a comprehensive music library.\
+Refine the home page design to make it even more user-friendly and visually appealing.\
+Expand the music library by adding more filtering, sorting, and search options on top of the Discogs API data.\
 Add Review System: Allow users to read and write reviews for albums and tracks.\
 Enable Commentary Sections: Create sections for user discussions and comments.\
 Integrate Rating Functionality: Develop a system for users to rate albums and tracks.\
