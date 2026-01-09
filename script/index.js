@@ -27,7 +27,9 @@ function createReleaseCard(release, wrapperId) {
         <div class="release-wrapper__content">
           <h4>${release.title}</h4>
           <h3>${release.year || ""}</h3>
-          <audio>${release.audio}</audio>
+          <audio controls>
+          <source src="she_fall.wav" type="audio/wav" />
+          </audio>
           <p>${getArtistName(release)}</p>
         </div>
       </a>
