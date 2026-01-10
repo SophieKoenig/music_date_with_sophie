@@ -34,7 +34,7 @@ function createReleaseCard(release, wrapperId) {
         </div>
       </a>
     </li>
-  `;
+  <audio src="somethingsGotAHoldOfMyHeart.wav"></audio>`;
 }
 
 // Populate all sections with Discogs data
