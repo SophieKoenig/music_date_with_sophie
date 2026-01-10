@@ -27,7 +27,7 @@ function createReleaseCard(release, wrapperId) {
         <div class="release-wrapper__content">
           <h4>${release.title}</h4>
           <h3>${release.year || ""}</h3>
-          <button class="play_button">
+          <button>
           <embed src="play-svgrepo-com.svg" />
           </button>
           <p>${getArtistName(release)}</p>
