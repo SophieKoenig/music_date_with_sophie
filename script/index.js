@@ -33,8 +33,7 @@ function createReleaseCard(release, wrapperId) {
           <p>${getArtistName(release)}</p>
         </div>
       </a>
-    </li>
-  <audio controls> <source src="somethingsGotAHoldOfMyHeart.wav" type="audio/wav"></audio>`;
+    </li>`;
 }
 
 // Populate all sections with Discogs data
