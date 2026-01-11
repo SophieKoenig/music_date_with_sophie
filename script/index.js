@@ -30,6 +30,7 @@ function createReleaseCard(release, wrapperId) {
           <button>
           <embed src="play-svgrepo-com.svg" />
           </button>
+          <audio src="somethingsGotAHoldOfMyHeart.wav"></audio>
           <p>${getArtistName(release)}</p>
         </div>
       </a>
