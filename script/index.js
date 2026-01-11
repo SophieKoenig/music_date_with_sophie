@@ -30,12 +30,11 @@ function createReleaseCard(release, wrapperId) {
           <button>
           <embed src="play-svgrepo-com.svg" />
           </button>
-          <audio src="somethingsGotAHoldOfMyHeart.wav"></audio>
           <p>${getArtistName(release)}</p>
         </div>
       </a>
     </li>
-  <audio src="somethingsGotAHoldOfMyHeart.wav"></audio>`;
+  <audio controls> <source src="somethingsGotAHoldOfMyHeart.wav" type="audio/wav"></audio>`;
 }
 
 // Populate all sections with Discogs data
