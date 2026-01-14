@@ -59,14 +59,39 @@ function populateAllSections() {
 
 //window.addEventListener("load", populateAllSections);
 
+// document.addEventListener("click", (event) => {
+//   console.log("document click works", event.target);
+//   const button = event.target.closest(".startAudio");
+//   if (!button) return;
+
+//   console.log("startAudio clicked");
+
+//   const audi = document.getElementById("trackPlayer");
+//   event.preventDefault();
+//   event.stopPropagation();
+
+//   audio.removeAttribute("hidden");
+//   audio
+//     .play()
+//     .then(() => {
+//       console.log("audio playing");
+//     })
+//     .catch(console.error);
+// });
+
 document.addEventListener("click", (event) => {
   console.log("document click works", event.target);
-  const button = event.target.closest(".startAudio");
+
+  // Look for button OR its parent link containing the button
+  const button =
+    event.target.closest(".startAudio") ||
+    event.target.closest("a").querySelector(".startAudio");
+
   if (!button) return;
 
   console.log("startAudio clicked");
 
-  const audi = document.getElementById("trackPlayer");
+  const audio = document.getElementById("trackPlayer");
   event.preventDefault();
   event.stopPropagation();
 
@@ -77,11 +102,6 @@ document.addEventListener("click", (event) => {
       console.log("audio playing");
     })
     .catch(console.error);
-});
-
-window.addEventListener("load", () => {
-  console.log("window load fired");
-  populateAllSections();
 });
 
 // //make audio controls visible + playing audio
@@ -118,3 +138,8 @@ window.addEventListener("load", () => {
 //       });
 //   });
 // });
+
+window.addEventListener("load", () => {
+  console.log("window load fired");
+  populateAllSections();
+});
