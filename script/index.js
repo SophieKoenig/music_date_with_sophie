@@ -27,7 +27,7 @@ function createReleaseCard(release, wrapperId) {
         <div class="release-wrapper__content">
           <h4>${release.title}</h4>
           <h3>${release.year || ""}</h3>
-          <button>
+          <button class="startAudio">
           <embed src="play-svgrepo-com.svg" />
           </button>
           <p>${getArtistName(release)}</p>
@@ -58,3 +58,23 @@ function populateAllSections() {
 }
 
 window.addEventListener("load", populateAllSections);
+
+//make audio controls visible + playing audio
+window.addEventListener("load", () => {
+  populateAllSections();
+
+  const audio = document.getElementById("trackPlayer");
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".startAudio")) return;
+
+    // show controls
+    audio.removeAttribute("hidden");
+
+    // step 2: start playback
+    audio.play().catch((err) => {
+      // optional: handle autoplay restriction errors
+      console.error("Could not start audio:", err);
+    });
+  });
+});
