@@ -61,23 +61,34 @@ function populateAllSections() {
 
 //make audio controls visible + playing audio
 window.addEventListener("load", () => {
+  console.log("window load fired");
+
   populateAllSections();
 
   const audio = document.getElementById("trackPlayer");
+  console.log("audio element:", audio);
 
   document.addEventListener("click", (event) => {
     const button = event.target.closest(".startAudio");
 
     if (!button) return;
 
+    console.log("startAudio clicked");
+
     // show controls
     event.preventDefault();
     event.stopPropagation();
+
     audio.removeAttribute("hidden");
 
     // step 2: start playback
-    audio.play().catch((err) => {
-      console.error("Could not start audio:", err);
-    });
+    audio
+      .play()
+      .then(() => {
+        console.log("audio is playing");
+      })
+      .catch((err) => {
+        console.error("Could not start audio:", err);
+      });
   });
 });
