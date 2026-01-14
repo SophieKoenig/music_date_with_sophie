@@ -57,16 +57,26 @@ function populateAllSections() {
   });
 }
 
-// Button handler FIRST (only buttons, stops link navigation)
 document.addEventListener("click", (event) => {
-  if (!event.target.matches(".startAudio")) return;
+  // Find button even if clicking INSIDE it (the SVG)
+  const button = event.target.closest(".startAudio");
+  if (!button) return;
+
+  console.log("startAudio button clicked");
 
   const audio = document.getElementById("trackPlayer");
-  event.stopPropagation();
+
+  // STOP event from bubbling to parent <a>
+  event.stopPropagation(); // Blocks card navigation
   event.preventDefault();
 
   audio.removeAttribute("hidden");
-  audio.play();
+  audio
+    .play()
+    .then(() => {
+      console.log("audio playing");
+    })
+    .catch(console.error);
 });
 
 // Content population on load
