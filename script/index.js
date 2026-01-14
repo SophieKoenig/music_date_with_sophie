@@ -57,26 +57,21 @@ function populateAllSections() {
   });
 }
 
+//start audio and make controls visible
 document.addEventListener("click", (event) => {
-  console.log("Clicked element:", event.target); // What exactly are we clicking?
-  console.log("Closest startAudio:", event.target.closest(".startAudio")); // Should be the button
-
   const button = event.target.closest(".startAudio");
   if (!button) return;
-
-  console.log("✅ startAudio button found:", button);
 
   const audio = document.getElementById("trackPlayer");
   event.stopPropagation();
   event.preventDefault();
 
   audio.removeAttribute("hidden");
-  audio
-    .play()
-    .then(() => {
-      console.log("audio playing");
-    })
-    .catch(console.error);
+  audio.play();
+});
+
+window.addEventListener("load", () => {
+  populateAllSections();
 });
 
 // Content population on load
