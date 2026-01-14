@@ -69,6 +69,7 @@ window.addEventListener("load", () => {
   console.log("audio element:", audio);
 
   document.addEventListener("click", (event) => {
+    console.log("any click on document", event.target);
     const button = event.target.closest(".startAudio");
 
     if (!button) return;
