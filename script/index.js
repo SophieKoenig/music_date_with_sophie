@@ -57,17 +57,13 @@ function populateAllSections() {
   });
 }
 
-// Click handler FIRST (outside load)
+// Button handler FIRST (only buttons, stops link navigation)
 document.addEventListener("click", (event) => {
-  const button =
-    event.target.closest(".startAudio") ||
-    event.target.closest("a").querySelector(".startAudio");
-
-  if (!button) return;
+  if (!event.target.matches(".startAudio")) return;
 
   const audio = document.getElementById("trackPlayer");
-  event.preventDefault();
   event.stopPropagation();
+  event.preventDefault();
 
   audio.removeAttribute("hidden");
   audio.play();
