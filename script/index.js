@@ -58,16 +58,16 @@ function populateAllSections() {
 }
 
 document.addEventListener("click", (event) => {
-  // Find button even if clicking INSIDE it (the SVG)
+  console.log("Clicked element:", event.target); // What exactly are we clicking?
+  console.log("Closest startAudio:", event.target.closest(".startAudio")); // Should be the button
+
   const button = event.target.closest(".startAudio");
   if (!button) return;
 
-  console.log("startAudio button clicked");
+  console.log("✅ startAudio button found:", button);
 
   const audio = document.getElementById("trackPlayer");
-
-  // STOP event from bubbling to parent <a>
-  event.stopPropagation(); // Blocks card navigation
+  event.stopPropagation();
   event.preventDefault();
 
   audio.removeAttribute("hidden");
