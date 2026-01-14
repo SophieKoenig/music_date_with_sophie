@@ -57,7 +57,7 @@ function populateAllSections() {
   });
 }
 
-window.addEventListener("load", populateAllSections);
+//window.addEventListener("load", populateAllSections);
 
 //make audio controls visible + playing audio
 window.addEventListener("load", () => {
