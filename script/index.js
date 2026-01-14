@@ -57,89 +57,23 @@ function populateAllSections() {
   });
 }
 
-//window.addEventListener("load", populateAllSections);
-
-// document.addEventListener("click", (event) => {
-//   console.log("document click works", event.target);
-//   const button = event.target.closest(".startAudio");
-//   if (!button) return;
-
-//   console.log("startAudio clicked");
-
-//   const audi = document.getElementById("trackPlayer");
-//   event.preventDefault();
-//   event.stopPropagation();
-
-//   audio.removeAttribute("hidden");
-//   audio
-//     .play()
-//     .then(() => {
-//       console.log("audio playing");
-//     })
-//     .catch(console.error);
-// });
-
+// Click handler FIRST (outside load)
 document.addEventListener("click", (event) => {
-  console.log("document click works", event.target);
-
-  // Look for button OR its parent link containing the button
   const button =
     event.target.closest(".startAudio") ||
     event.target.closest("a").querySelector(".startAudio");
 
   if (!button) return;
 
-  console.log("startAudio clicked");
-
   const audio = document.getElementById("trackPlayer");
   event.preventDefault();
   event.stopPropagation();
 
   audio.removeAttribute("hidden");
-  audio
-    .play()
-    .then(() => {
-      console.log("audio playing");
-    })
-    .catch(console.error);
+  audio.play();
 });
 
-// //make audio controls visible + playing audio
-// window.addEventListener("load", () => {
-//   console.log("window load fired");
-
-//   populateAllSections();
-
-//   const audio = document.getElementById("trackPlayer");
-//   console.log("audio element:", audio);
-
-//   document.addEventListener("click", (event) => {
-//     console.log("any click on document", event.target);
-//     const button = event.target.closest(".startAudio");
-
-//     if (!button) return;
-
-//     console.log("startAudio clicked");
-
-//     // show controls
-//     event.preventDefault();
-//     event.stopPropagation();
-
-//     audio.removeAttribute("hidden");
-
-//     // step 2: start playback
-//     audio
-//       .play()
-//       .then(() => {
-//         console.log("audio is playing");
-//       })
-//       .catch((err) => {
-//         console.error("Could not start audio:", err);
-//       });
-//   });
-// });
-
+// Content population on load
 window.addEventListener("load", () => {
-  console.log("window load fired");
   populateAllSections();
 });
