@@ -262,7 +262,7 @@
   color: #444;
 }
 
-audio {
+.audiocontrols {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -272,6 +272,16 @@ audio {
   color: #e0e0e0;
   z-index: 1000;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.audiocontrols::-webkit-media-controls-panel {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.audiocontrols::-webkit-media-controls-enclosure {
+  background-color: #444;
+  border-radius: 0;
 }
 
 /* Applies to the entire body of the HTML document */
