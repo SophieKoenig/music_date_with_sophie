@@ -4,26 +4,8 @@
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: $color;
-  color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   z-index: 1000;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.8);
-}
-
-&::-webkit-media-controls-panel {
-  background-color: var(--card-bg);
-  color: var(--nav-link-active);
-  border-top: 1px solid var(--nav-link);
-}
-
-&::-webkit-media-controls-play-button {
-  filter: brightness(1.4) contrast(1.3);
-}
-
-&::-webkit-media-controls-volume-slider-container {
-  filter: brightness(1.2);
-}
-
-&::-webkit-media-controls-mute-button {
-  color: var(--nav-link-active);
 }
