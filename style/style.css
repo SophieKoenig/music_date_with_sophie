@@ -262,6 +262,18 @@
   color: #444;
 }
 
+.audiocontrols {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #e0d1d1;
+  color: #111010;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
+
 /* Applies to the entire body of the HTML document */
 body,
 html {
