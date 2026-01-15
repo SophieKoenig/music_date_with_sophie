@@ -268,10 +268,20 @@
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: #000;
+  color: #fff;
   z-index: 1000;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.audiocontrols::-webkit-media-controls-panel {
+  background-color: #000;
+  color: #fff;
+}
+
+.audiocontrols::-webkit-media-controls-enclosure {
+  background-color: #000;
+  border-radius: 0;
 }
 
 /* Applies to the entire body of the HTML document */
