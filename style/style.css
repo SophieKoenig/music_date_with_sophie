@@ -12,13 +12,12 @@
 
 .top-bar {
   padding: 0.5em;
-  background-color: var(--bg-color);
+  background-color: #444;
   display: flex;
   justify-content: center;
   position: -webkit-sticky;
   /* For Safari */
   position: sticky;
-  /* Standard CSS */
   top: 0;
   z-index: 1000;
 }
@@ -142,6 +141,19 @@
   padding: 10px;
 }
 
+.startAudio {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -250,8 +262,28 @@
   color: #444;
 }
 
-/* Applies to the entire body of the HTML document (except where overridden by more specific
-selectors). */
+.audiocontrols {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.audiocontrols::-webkit-media-controls-panel {
+  background-color: #000;
+  color: #fff;
+}
+
+.audiocontrols::-webkit-media-controls-enclosure {
+  background-color: #000;
+  border-radius: 0;
+}
+
 body,
 html {
   min-height: 100%;
@@ -286,7 +318,7 @@ main {
   padding-top: 50px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .max-width {
@@ -298,7 +330,6 @@ main {
   text-align: center;
 }
 
-/* Applies to all <h1>...</h1> elements. */
 h1 {
   font-size: 35px;
   font-weight: normal;
@@ -313,9 +344,6 @@ p {
   line-height: 2em;
 }
 
-/* Applies to all elements with <... class="active"> specified. */
 .active {
   color: white;
 }
-
-/*# sourceMappingURL=style.css.map */

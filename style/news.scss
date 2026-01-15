@@ -1,5 +1,4 @@
 .news-wrapper {
-  // No layout styles here anymore!
   max-width: 1000px;
   width: 100%;
   margin: auto;
@@ -7,7 +6,6 @@
   padding: 0;
 
   &__section {
-    // Remove width, margin, display: flex, etc.
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

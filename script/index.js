@@ -67,7 +67,14 @@ document.addEventListener("click", (event) => {
   event.preventDefault();
 
   audio.removeAttribute("hidden");
-  audio.play();
+
+  if (audio.paused) {
+    audio.play();
+    button.classList.add("is-playing");
+  } else {
+    audio.pause();
+    button.classList.remove("is-playing");
+  }
 });
 
 window.addEventListener("load", () => {

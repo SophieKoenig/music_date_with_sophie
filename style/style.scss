@@ -5,9 +5,9 @@
 @import "releasesCards.scss";
 @import "cardContainer.scss";
 @import "releaseDetails.scss";
+@import "audioControls.scss";
 
-/* Applies to the entire body of the HTML document (except where overridden by more specific
-selectors). */
+/* Applies to the entire body of the HTML document */
 body,
 html {
   min-height: 100%;
@@ -42,7 +42,7 @@ main {
   padding-top: 50px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 .max-width {
   max-width: 1000px;
@@ -51,7 +51,7 @@ main {
 .text-align-center {
   text-align: center;
 }
-/* Applies to all <h1>...</h1> elements. */
+
 h1 {
   font-size: 35px;
   font-weight: normal;
@@ -66,7 +66,6 @@ p {
   line-height: 2em;
 }
 
-/* Applies to all elements with <... class="active"> specified. */
 .active {
   color: white;
 }
