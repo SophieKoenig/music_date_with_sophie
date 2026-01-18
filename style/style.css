@@ -1,17 +1,330 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 8 | @import "audioControls.scss";
- *   |         ^^^^^^^^^^^^^^^^^^^^
- *   '
- *   style.scss 8:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 8 \2502  @import \"audioControls.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   style.scss 8:9  root stylesheet";
+:root {
+  --bg-color: #181a20;
+  --text-color: #e0e0e0;
+  --card-bg: #23242b;
+  --nav-bg: #20212b;
+  --nav-link: #e0e0e0;
+  --nav-link-active: #90cdf4;
+  --card-link: #e0e0e0;
+  --card-link-hover: #90cdf4;
+  --box-bg: #23242b;
 }
+
+.top-bar {
+  padding: 0.5em;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.top-bar--color {
+  background-color: #444;
+}
+.top-bar .navChild__image {
+  height: 3em;
+  width: auto;
+}
+.top-bar .img_links_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.5em;
+}
+.top-bar .img_links_wrapper a {
+  color: beige;
+}
+.top-bar input {
+  width: 70em;
+}
+@media screen and (max-width: 1000px) {
+  .top-bar input {
+    width: 50em;
+  }
+}
+@media screen and (max-width: 481px) {
+  .top-bar input {
+    width: 100%;
+    margin: 0;
+  }
+}
+.top-bar__link {
+  font-weight: bold;
+}
+@media screen and (max-width: 1079px) {
+  .top-bar__link {
+    font-size: 400px;
+    margin-top: 15px;
+  }
+}
+.top-bar__link--active {
+  border-bottom: 2px solid beige;
+}
+
+.review-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.review-wrapper__card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.review-wrapper__card a {
+  text-decoration: none;
+  color: #000;
+}
+.review-wrapper__card img {
+  width: 100%;
+  object-fit: cover;
+}
+.review-wrapper__content {
+  padding: 10px;
+}
+
+.news-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.news-wrapper__section {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.news-wrapper__section a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+}
+.news-wrapper__section img {
+  width: 60%;
+  object-fit: cover;
+}
+.news-wrapper__content {
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.release-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.release-wrapper__card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.release-wrapper__card a {
+  text-decoration: none;
+  color: #000;
+}
+.release-wrapper__card img {
+  width: 100%;
+  object-fit: cover;
+}
+.release-wrapper__content {
+  padding: 10px;
+}
+
+.startAudio {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 32px 0;
+  list-style: none;
+}
+
+.card-container > li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex: 1 1 calc(33.33% - 32px);
+  max-width: 340px;
+  min-width: 260px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container > li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 900px) {
+  .card-container > li {
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container > li {
+    flex: 1 1 100%;
+    max-width: 95vw;
+  }
+}
+.release-details {
+  padding: 2rem 1rem;
+}
+.release-details .release-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.release-details .release-header .release-cover {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.release-details .release-header .release-meta {
+  flex: 1;
+  min-width: 300px;
+}
+.release-details .release-header .release-meta h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+.release-details .release-header .release-meta h2 {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+.release-details .release-header .release-meta p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.release-details .tracklist-section {
+  margin: 2rem 0;
+}
+.release-details .tracklist-section ol {
+  padding-left: 1.5rem;
+  columns: 2;
+}
+@media (max-width: 600px) {
+  .release-details .tracklist-section ol {
+    columns: 1;
+  }
+}
+.release-details .extra-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.release-details .extra-info .info-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.release-details .extra-info .info-box h4 {
+  margin: 0 0 0.5rem;
+  color: #444;
+}
+
+/* Applies to the entire body of the HTML document */
+body,
+html {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+}
+
+body.active {
+  background-color: black;
+}
+
+body.active p {
+  background-color: green;
+  color: red;
+}
+
+.active img {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+main {
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 80px;
+}
+
+.max-width {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 30px;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  line-height: 2em;
+}
+
+.active {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
