@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   const {
     type = "release",
     sort = "year",
-    sort_order = "desc",
+    sort_order = "asc",
     per_page = 8,
     genre = "pop",
   } = event.queryStringParameters || {};
