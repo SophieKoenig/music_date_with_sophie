@@ -5,8 +5,8 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     artist = "tame impala",
-    type = "release",
-    sort = "most popular",
+    type = "album",
+    sort = "title",
     sort_order = "desc",
     per_page = 8,
     //genre = "psychedelic",
