@@ -28,7 +28,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?artist=${artist}type=${type}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}`;
+    const url = `https://api.discogs.com/database/search?artist=${artist}&type=${type}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
