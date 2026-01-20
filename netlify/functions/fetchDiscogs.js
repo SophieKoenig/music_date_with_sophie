@@ -5,8 +5,8 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     label = "vertigo",
-    released = "1988",
-    sort_order = "asc",
+    released = "1981",
+    //sort_order = "asc",
     per_page = 8,
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
