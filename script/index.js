@@ -2,7 +2,7 @@ import { fetchRecentReleases } from "./discogsAPI.js";
 
 const PLACEHOLDER_IMG = "../missingTrack2.jpg";
 
-// Helper to extract artist names from Discogs search result
+// Extract artist names from Discogs search result
 function getArtistName(release) {
   if (release.artist) return release.artist;
   if (release.artist_name) return release.artist_name;
@@ -12,7 +12,7 @@ function getArtistName(release) {
   return "";
 }
 
-// Helper to create a card from Discogs release data
+// Create a card from Discogs release data
 function createReleaseCard(release, wrapperId) {
   const wrapper = document.getElementById(wrapperId);
   // Use placeholder if cover_image is missing, empty, or null

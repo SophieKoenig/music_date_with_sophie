@@ -1,4 +1,3 @@
-// discogsAPI.js
 
 // Fetch recent releases from your Netlify function
 function fetchRecentReleases() {
@@ -10,8 +9,6 @@ function fetchRecentReleases() {
     });
 }
 
-// Fetch detailed information for a specific release (if you have a function for this)
-// discogsAPI.js
 
 function fetchReleaseDetails(releaseId) {
   return fetch(`/.netlify/functions/fetchDiscogsDetails?id=${releaseId}`)

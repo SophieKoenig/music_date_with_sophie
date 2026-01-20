@@ -1,15 +1,14 @@
 // netlify/functions/fetchDiscogs.js
 
-const fetch = require("node-fetch"); // or use axios if you prefer
+const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
-  // Get query parameters (optional, for flexibility)
   const {
     type = "release",
     sort = "year",
     sort_order = "desc",
     per_page = 8,
-    genre = "rock",
+    genre = "pop",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
