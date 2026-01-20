@@ -4,7 +4,8 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    label = "sacred bones",
+    label = "vertigo",
+    released = "1988",
     sort_order = "asc",
     per_page = 8,
   } = event.queryStringParameters || {};
@@ -25,7 +26,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?label=${label}&sort_order=${sort_order}&per_page=${per_page}`;
+    const url = `https://api.discogs.com/database/search?label=${label}&released=${released}&sort_order=${sort_order}&per_page=${per_page}`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
