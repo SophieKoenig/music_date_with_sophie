@@ -6,8 +6,8 @@ exports.handler = async (event) => {
   const {
     artist = "tame impala",
     type = "album",
-    sort = "title",
-    sort_order = "desc",
+    sort = "year",
+    sort_order = "asc",
     per_page = 8,
     //genre = "psychedelic",
   } = event.queryStringParameters || {};
