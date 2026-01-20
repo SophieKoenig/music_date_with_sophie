@@ -5,10 +5,11 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     type = "release",
+    //artist = "tame impala",
     sort = "year",
     sort_order = "asc",
     per_page = 8,
-    genre = "hiphop",
+    genre = "psychedelic",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
