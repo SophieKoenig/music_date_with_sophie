@@ -5,10 +5,10 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     type = "release",
-    sort = "1986",
-    sort_order = "asc",
+    sort = "year",
+    sort_order = "desc",
     per_page = 8,
-    genre = "pop",
+    genre = "techno",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
