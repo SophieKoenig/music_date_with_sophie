@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     type = "release",
-    sort = "year",
+    sort = "1986",
     sort_order = "asc",
     per_page = 8,
     genre = "pop",
