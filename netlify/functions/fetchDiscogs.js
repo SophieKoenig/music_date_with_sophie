@@ -7,6 +7,7 @@ exports.handler = async (event) => {
     artist = "tame impala",
     type = "album",
     sort = "year",
+    label = "modular",
     sort_order = "asc",
     per_page = 8,
     //genre = "psychedelic",
@@ -28,7 +29,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?artist=${artist}&type=${type}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}`;
+    const url = `https://api.discogs.com/database/search?artist=${artist}&type=${type}&sort=${sort}&label=${label}&sort_order=${sort_order}&per_page=${per_page}`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
