@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     sort = "year",
     sort_order = "desc",
     per_page = 8,
-    genre = "techno",
+    genre = "Electronic",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
