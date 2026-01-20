@@ -5,11 +5,11 @@ const fetch = require("node-fetch");
 exports.handler = async (event) => {
   const {
     type = "release",
-    //artist = "tame impala",
+    artist = "tame impala",
     sort = "year",
     sort_order = "asc",
     per_page = 8,
-    genre = "psychedelic",
+    //genre = "psychedelic",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
@@ -28,7 +28,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?type=${type}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}&genre=${genre}`;
+    const url = `https://api.discogs.com/database/search?type=${type}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}&artist=${artist}`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
