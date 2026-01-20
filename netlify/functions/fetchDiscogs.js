@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    artist = "cluster",
+    artist = "a40226",
     sort = "title",
     sort_order = "asc",
     per_page = 8,
