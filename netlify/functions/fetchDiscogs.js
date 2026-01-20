@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    label = "modular recordings",
+    label = "sacred bones",
     sort_order = "asc",
     per_page = 8,
   } = event.queryStringParameters || {};
