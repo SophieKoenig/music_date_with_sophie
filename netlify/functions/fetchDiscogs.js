@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   const {
     artist = "tame impala",
     type = "release",
-    sort = "year",
+    sort = "most popular",
     sort_order = "asc",
     per_page = 8,
     //genre = "psychedelic",
