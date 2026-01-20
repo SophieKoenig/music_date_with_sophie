@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   const {
     label = "vertigo",
     released = "1981",
-    //sort_order = "asc",
+    sort = "title",
     per_page = 8,
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
@@ -26,7 +26,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?label=${label}&released=${released}&sort_order=${sort_order}&per_page=${per_page}`;
+    const url = `https://api.discogs.com/database/search?label=${label}&released=${released}&sort=${sort}&per_page=${per_page}`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
