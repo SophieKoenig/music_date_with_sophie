@@ -4,10 +4,11 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    artist = "a40226",
+    type = "release",
     sort = "title",
     sort_order = "asc",
     per_page = 8,
+    genre = "jazz",
   } = event.queryStringParameters || {};
   const token = process.env.DISCOGS_TOKEN;
 
