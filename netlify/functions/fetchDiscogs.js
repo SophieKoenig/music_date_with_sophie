@@ -4,8 +4,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    type = "release",
-    sort = "title",
+    sort = "year",
     sort_order = "asc",
     per_page = 8,
     genre = "jazz",
@@ -27,7 +26,7 @@ exports.handler = async (event) => {
 
   try {
     // Example: fetch recent releases
-    const url = `https://api.discogs.com/database/search?artist=${artist}&sort=${sort}&sort_order=${sort_order}&per_page=${per_page}`;
+    const url = `https://api.discogs.com/database/search?sort=${sort}&sort_order=${sort_order}&per_page=${per_page}&genre=${genre}&`;
     const response = await fetch(url, { headers });
     const data = await response.json();
     return {
