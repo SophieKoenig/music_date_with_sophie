@@ -4,8 +4,8 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const {
-    sort = "year",
-    sort_order = "asc",
+    sort = "added",
+    sort_order = "desc",
     per_page = 8,
     genre = "pop",
   } = event.queryStringParameters || {};
