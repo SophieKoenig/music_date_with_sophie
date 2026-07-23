@@ -58,30 +58,30 @@ function populateAllSections() {
 }
 
 //start audio and make controls visible
-document.addEventListener("click", (event) => {
-  const button = event.target.closest(".startAudio");
-  if (!button) return;
+// document.addEventListener("click", (event) => {
+//   const button = event.target.closest(".startAudio");
+//   if (!button) return;
 
-  const audio = document.getElementById("trackPlayer");
-  event.stopPropagation();
-  event.preventDefault();
+//   const audio = document.getElementById("trackPlayer");
+//   event.stopPropagation();
+//   event.preventDefault();
 
-  audio.removeAttribute("hidden");
+//   audio.removeAttribute("hidden");
 
-  if (audio.paused) {
-    audio.play();
-    button.classList.add("is-playing");
-  } else {
-    audio.pause();
-    button.classList.remove("is-playing");
-  }
-});
+//   if (audio.paused) {
+//     audio.play();
+//     button.classList.add("is-playing");
+//   } else {
+//     audio.pause();
+//     button.classList.remove("is-playing");
+//   }
+// });
 
-window.addEventListener("load", () => {
-  populateAllSections();
-});
+// window.addEventListener("load", () => {
+//   populateAllSections();
+// });
 
-// Content population on load
-window.addEventListener("load", () => {
-  populateAllSections();
-});
+// // Content population on load
+// window.addEventListener("load", () => {
+//   populateAllSections();
+// });

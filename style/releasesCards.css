@@ -1,0 +1,25 @@
+.release-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.release-wrapper__card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.release-wrapper__card a {
+  text-decoration: none;
+  color: #000;
+}
+.release-wrapper__card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.release-wrapper__content {
+  padding: 10px;
+}/*# sourceMappingURL=releasesCards.css.map */

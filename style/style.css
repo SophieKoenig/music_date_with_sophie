@@ -14,9 +14,7 @@
   padding: 0.5em;
   background-color: #444;
   display: flex;
-  justify-content: center;
-  position: -webkit-sticky;
-  /* For Safari */
+  justify-content: center; /* For Safari */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -83,7 +81,8 @@
 }
 .review-wrapper__card img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .review-wrapper__content {
   padding: 10px;
@@ -109,7 +108,8 @@
 }
 .news-wrapper__section img {
   width: 60%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .news-wrapper__content {
   padding: 10px;
@@ -135,23 +135,11 @@
 }
 .release-wrapper__card img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .release-wrapper__content {
   padding: 10px;
-}
-
-.startAudio {
-  width: 60px;
-  height: 60px;
-  border: none;
-  background: #333;
-  color: white;
-  font-size: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .card-container {
@@ -194,7 +182,6 @@
     flex-direction: column;
     align-items: center;
   }
-
   .card-container > li {
     flex: 1 1 100%;
     max-width: 95vw;
@@ -212,7 +199,8 @@
 .release-details .release-header .release-cover {
   width: 300px;
   height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -238,11 +226,13 @@
 }
 .release-details .tracklist-section ol {
   padding-left: 1.5rem;
-  columns: 2;
+  -moz-columns: 2;
+       columns: 2;
 }
 @media (max-width: 600px) {
   .release-details .tracklist-section ol {
-    columns: 1;
+    -moz-columns: 1;
+         columns: 1;
   }
 }
 .release-details .extra-info {
@@ -325,6 +315,4 @@ p {
 
 .active {
   color: white;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

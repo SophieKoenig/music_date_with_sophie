@@ -1,0 +1,27 @@
+.news-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.news-wrapper__section {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.news-wrapper__section a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+}
+.news-wrapper__section img {
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news-wrapper__content {
+  padding: 10px;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=news.css.map */

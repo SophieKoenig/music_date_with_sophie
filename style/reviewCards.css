@@ -1,0 +1,25 @@
+.review-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  font-size: 0;
+  padding: 0;
+}
+.review-wrapper__card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+}
+.review-wrapper__card a {
+  text-decoration: none;
+  color: #000;
+}
+.review-wrapper__card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.review-wrapper__content {
+  padding: 10px;
+}/*# sourceMappingURL=reviewCards.css.map */
