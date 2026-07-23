@@ -77,11 +77,11 @@ function populateAllSections() {
 //   }
 // });
 
-// window.addEventListener("load", () => {
-//   populateAllSections();
-// });
+window.addEventListener("load", () => {
+  populateAllSections();
+});
 
-// // Content population on load
-// window.addEventListener("load", () => {
-//   populateAllSections();
-// });
+// Content population on load
+window.addEventListener("load", () => {
+  populateAllSections();
+});
