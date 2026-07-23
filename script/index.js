@@ -27,14 +27,15 @@ function createReleaseCard(release, wrapperId) {
         <div class="release-wrapper__content">
           <h4>${release.title}</h4>
           <h3>${release.year || ""}</h3>
-          // <button class="startAudio" type="button">
-          //   ▶
-          // </button>
           <p>${getArtistName(release)}</p>
         </div>
       </a>
     </li>`;
 }
+//zwischen h3 und p audio button einfügen bei Bedarf
+//<button class="startAudio" type="button" >
+//    ▶
+//  </button>
 
 // Populate all sections with Discogs data
 function populateAllSections() {
